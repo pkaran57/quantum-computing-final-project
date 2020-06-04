@@ -8,8 +8,8 @@ import logging
 
 from qiskit.aqua.algorithms import Shor
 
-logging.basicConfig(format="'%(asctime)s' %(name)s %(message)s'", level=logging.INFO)
-logger = logging.getLogger()
+logging.basicConfig(format="%(message)s", level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 Ns = 15, 21
 
@@ -18,7 +18,8 @@ for N in Ns:
 
     qc = shor.construct_circuit()
 
-    num_qubits = qc.num_qubits()
+    num_qubits = qc.num_qubits
+    num_classical_bits = qc.num_clbits
 
     # get the number and type of the gates in circuit
     num_ops = qc.count_ops()
@@ -33,8 +34,11 @@ for N in Ns:
     device. '''
     dept = qc.depth()
 
-    logger.info('Shor circuit for factoring {} requires a circuit with {} qubits, {} ops, {} size, {} dept'.format(N,
-                                                                                                                   num_qubits,
-                                                                                                                   num_ops,
-                                                                                                                   size,
-                                                                                                                   dept))
+    logger.info(
+        "Shor's circuit for factoring {} requires:\n {} qubits,\n {} classical bits,\n {} ops,\n {} size,\n {} dept".format(
+            N,
+            num_qubits,
+            num_classical_bits,
+            num_ops,
+            size,
+            dept))
