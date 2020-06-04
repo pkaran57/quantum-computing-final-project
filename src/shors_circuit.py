@@ -1,9 +1,3 @@
-"""
-https://qiskit.org/documentation/search.html?q=shor&check_keywords=yes&area=default
-https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Shor.html?highlight=shor#qiskit.aqua.algorithms.Shor
-https://arxiv.org/abs/quant-ph/0205095
-https://quantum-computing.ibm.com/jupyter/tutorial/fundamentals/4_quantum_circuit_properties.ipynb
-"""
 import logging
 
 from qiskit.aqua.algorithms import Shor
@@ -11,9 +5,10 @@ from qiskit.aqua.algorithms import Shor
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-Ns = 15, 21
+Ns = 15, 21, 33, 35
 
 for N in Ns:
+    logging.info("\nShor's circuit configuration for factoring {}:".format(N))
     shor = Shor(N)
 
     qc = shor.construct_circuit()
@@ -34,7 +29,7 @@ for N in Ns:
     device. '''
     dept = qc.depth()
 
-    logger.info(
+    logger.debug(
         "Shor's circuit for factoring {} requires:\n {} qubits,\n {} classical bits,\n {} ops,\n {} size,\n {} dept".format(
             N,
             num_qubits,
