@@ -1,0 +1,27 @@
+import logging
+
+from qiskit import IBMQ, Aer
+from qiskit.providers.ibmq import least_busy
+
+
+class DeviceUtils:
+    logger = logging.getLogger()
+
+    @staticmethod
+    def get_device(use_local_simulator=False, min_num_qubits=10):
+        if use_local_simulator:
+            return Aer.get_backend('qasm_simulator')
+
+        provider = IBMQ.load_account()
+        DeviceUtils.logger.info('Provider - {}'.format(IBMQ.get_provider()))
+
+        devices = provider.backends(filters=lambda x: x.configuration().n_qubits >= min_num_qubits
+                                                      and not x.configuration().simulator
+                                                      and x.status().operational == True)
+        least_busy_device = least_busy(devices)
+
+        DeviceUtils.logger.info(
+            'Following is the least busy device: {} with following status: {}'.format(least_busy_device,
+                                                                                      least_busy_device.status().to_dict()))
+
+        return least_busy_device
