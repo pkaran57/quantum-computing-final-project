@@ -1,6 +1,9 @@
 import logging
+import os
 
 from qiskit.aqua.algorithms import Shor
+
+from definitions import OUTPUT_DIR
 
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -12,6 +15,7 @@ for N in Ns:
     shor = Shor(N)
 
     qc = shor.construct_circuit()
+    qc.draw(output='latex_source', filename=(os.path.join(OUTPUT_DIR, 'shors-diag-for-{}.tex'.format(N))))
 
     num_qubits = qc.num_qubits
     num_classical_bits = qc.num_clbits
