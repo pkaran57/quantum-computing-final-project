@@ -11,7 +11,7 @@ logger = logging.getLogger('main')
 # device = provider.get_backend('ibmq_qasm_simulator')
 device = Aer.get_backend('qasm_simulator')
 
-prime_number = 65
+prime_number = 15
 
 shor = Shor(prime_number)
 quantum_instance = QuantumInstance(device)
