@@ -11,11 +11,11 @@ logger = logging.getLogger('main')
 # device = provider.get_backend('ibmq_qasm_simulator')
 device = Aer.get_backend('qasm_simulator')
 
-prime_number = 15
+number_to_factorize = 15
 
-shor = Shor(prime_number)
+shor = Shor(number_to_factorize)
+
 quantum_instance = QuantumInstance(device)
-
 result = shor.run(quantum_instance)
 
-print("The list of factors of {} as computed by Shor is {}.".format(prime_number, result['factors'][0]))
+print("The list of factors of {} as computed by Shor is {}.".format(number_to_factorize, result['factors'][0]))
