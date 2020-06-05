@@ -1,6 +1,5 @@
 import logging
 import os
-
 from qiskit.aqua.algorithms import Shor
 
 from definitions import OUTPUT_DIR
@@ -8,7 +7,7 @@ from definitions import OUTPUT_DIR
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-Ns = 15, 21, 33, 35
+Ns = 15, 21, 33, 35, 39, 45
 
 for N in Ns:
     logging.info("\nShor's circuit configuration for factoring {}:".format(N))
