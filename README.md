@@ -1,8 +1,14 @@
-* https://qiskit.org/documentation/search.html?q=shor&check_keywords=yes&area=default
-* https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Shor.html?highlight=shor#qiskit.aqua.algorithms.Shor
-* https://arxiv.org/abs/quant-ph/0205095
-* https://quantum-computing.ibm.com/jupyter/tutorial/fundamentals/4_quantum_circuit_properties.ipynb
+## Complexity analysis of IBM Qiskit’s implementation of Shor’s algorithm  
 
-* https://quantumcomputing.stackexchange.com/questions/10128/how-many-qubits-does-the-qiskit-implementation-of-shors-algorithm-need-to-facto?rq=1
-* https://quantumcomputing.stackexchange.com/questions/8326/is-it-possible-to-run-a-general-implementation-shors-algorithm-on-a-real-ibm-qu
-* https://medium.com/@jackkrupansky/ingredients-for-shors-algorithm-for-cracking-strong-encryption-using-a-quantum-computer-847198f47103
+The purpose of this project is to perform complexity analysis of IBM Qiskit’s implementation of Shor’s algorithm to help understand the number of Qubits required in the quantum circuit to be able to factorize a given number N. This is the final project for the `CS 510 - Intro to Quantum Computing` at PSU.  
+
+Following is the result:  
+![Analysis](/screenshots/analysis.jpg)
+
+### Final Project Deliverables
+[Efficient Hybrid Circuit for implementing Shor’s Algorithm Report](https://1drv.ms/b/s!Arc54q14bwOLgt5zqi1eFiAC9i63xQ?e=JBeyRr)
+[Presentation](https://1drv.ms/p/s!Arc54q14bwOLgt5ykTVbdRqka3rMqQ?e=vPZdRZ)
+
+### Resources
+* [IBM Quantum Experience - Shor’s algorithm](https://quantum-computing.ibm.com/docs/iqx/guide/shors-algorithm)
+* [Qiskit Aqua - Shor's factoring algorithm](https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Shor.html?highlight=shor#qiskit.aqua.algorithms.Shor)
