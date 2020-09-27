@@ -10,5 +10,5 @@ Following is the result:
 * [Presentation](https://1drv.ms/p/s!Arc54q14bwOLgt5ykTVbdRqka3rMqQ?e=vPZdRZ)
 
 ### Resources
-* [IBM Quantum Experience - Shor’s algorithm](https://quantum-computing.ibm.copm/docs/iqx/guide/shors-algorithm)
+* [IBM Quantum Experience - Shor’s algorithm](https://quantum-computing.ibm.com/docs/iqx/guide/shors-algorithm)
 * [Qiskit Aqua - Shor's factoring algorithm](https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.Shor.html?highlight=shor#qiskit.aqua.algorithms.Shor)
